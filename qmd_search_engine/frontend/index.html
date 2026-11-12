@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QMD Search Engine</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">QMD Search</div>
+        <p>Markdown Document Search Engine</p>
+    </header>
+
+    <main class="container">
+
+        <section class="hero">
+            <h1>Search Your Knowledge Base</h1>
+            <p>
+                Find relevant information from your Markdown documents
+                using keyword, semantic, and hybrid search.
+            </p>
+        </section>
+
+        <section class="search-section">
+
+            <form id="searchForm">
+
+                <div class="search-box">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Enter your search query..."
+                        required
+                    >
+
+                    <button type="submit" id="searchButton">
+                        Search
+                    </button>
+                </div>
+
+                <div class="filters">
+
+                    <div class="filter-group">
+                        <label for="searchMode">Search Mode</label>
+                        <select id="searchMode">
+                            <option value="hybrid">Hybrid Search</option>
+                            <option value="keyword">Keyword Search</option>
+                            <option value="semantic">Semantic Search</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="collection">Collection</label>
+                        <select id="collection">
+                            <option value="">All Collections</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="topK">Number of Results</label>
+                        <select id="topK">
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                        </select>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </section>
+
+        <section class="results-section">
+
+            <div id="statusMessage"></div>
+
+            <div id="resultsContainer">
+                <div class="empty-state">
+                    <h2>Ready to Search</h2>
+                    <p>
+                        Enter a query above to find relevant
+                        Markdown document sections.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>QMD Search Engine | Python + FastAPI + SQLite</p>
+    </footer>
+
+    <script src="/static/js/app.js"></script>
+
+</body>
+</html>
